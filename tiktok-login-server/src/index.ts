@@ -2,7 +2,7 @@ import express, { Application, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
-dotenv.cofig();
+dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT || 4000;
