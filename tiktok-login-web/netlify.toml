@@ -1,0 +1,12 @@
+[build]
+  # Perintah untuk build project
+  command = "npm run build"
+  # Folder output build Vite
+  publish = "dist"
+
+# Redirect rule untuk SPA (Single Page Application / React Router)
+# Mencegah error 404 saat mengakses direct link atau me-refresh halaman
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
