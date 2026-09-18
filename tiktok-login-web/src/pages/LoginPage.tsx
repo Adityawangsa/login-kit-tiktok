@@ -38,7 +38,7 @@ function parseTiktokParams(searchParams: URLSearchParams): TiktokResult {
     }
 
     if (searchParams.get('tiktok_error')) {
-        return { status: 'error' };
+        return { status: 'error', message: searchParams.get('tiktok_error') ?? 'Unknown TikTok error' };
     }
 
     return { status: 'idle' }
