@@ -74,8 +74,7 @@ export const tiktokRedirect = async (req: Request, res: Response): Promise<void>
 
         // Retrive TikTok Profile
         const profileResponse = await fetch(
-            'https://open.tiktokapis.com/v2/info' +
-            '?fields=open_id,display_name,avatar_url',
+            'https://open.tiktokapis.com/v2/user/info/?fields=open_id,display_name,avatar_url',
             {
                 headers: {
                     Authorization: `Bearer ${tokenData.access_token}`

@@ -39,16 +39,21 @@ const AuthorizedPage = (): ReactElement => {
 
                 {/* Profile Card */}
                 <div className="w-full bg-neutral-800 border border-neutral-700 rounded-2xl p-5 flex items-center gap-4">
-                    <img
-                        src={avatarUrl}
-                        alt={`${displayName}'s TikTok Avatar`}
-                        className="w-12 h-12 rounded-full object-cover shrink-0 ring-2 ring-neutral-600"
-                        onError={(e) => {
-                            // Fallback to a generic icon if the signed avatar URL expires
-                            (e.currentTarget as HTMLImageElement).style.display = 'none';
-                            (e.currentTarget.nextElementSibling as HTMLElement | null)?.classList.remove('hidden');
-                        }}
-                    />
+                    <div className="relative w-12 h-12 rounded-full shrink-0">
+                        <img
+                            src={avatarUrl}
+                            alt={`${displayName}'s TikTok Avatar`}
+                            className="w-12 h-12 rounded-full object-cover ring-2 ring-neutral-600"
+                            onError={(e) => {
+                                // Fallback to generic icon if signed URL expires or image fails to load
+                                (e.currentTarget as HTMLImageElement).style.display = 'none';
+                                (e.currentTarget.nextElementSibling as HTMLElement | null)?.classList.remove('hidden');
+                            }}
+                        />
+                        <div className="hidden w-12 h-12 rounded-full bg-neutral-700 ring-2 ring-neutral-600 flex items-center justify-center text-neutral-300">
+                            <i className="fa-solid fa-user text-xl" aria-hidden="true"></i>
+                        </div>
+                    </div>
 
                     <div className="text-left overflow-hidden">
                         <p className="text-white font-semibold text-sm truncate">{displayName}</p>
