@@ -84,11 +84,9 @@ const LoginPage = (): ReactElement => {
             <section className="w-full max-w-md bg-neutral-900 border border-neutral-700 rounded-2xl shadow-xl overflow-hidden p-10 flex flex-col items-center gap-8">
                 <div className="flex flex-col items-center gap-3">
                     <div
-                        className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center"
+                        className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center cursor-pointer overflow-hidden"
                         onClick={() => navigate('/')}>
-                        {/* TODO: Add Tiktok Logo here */}
-                        <i className="fa-brands fa-tiktok text-4xl text-white"
-                            aria-hidden="true"></i>
+                        <img src="/bird-logo.png" alt="Logo" className="w-full h-full object-contain" />
                     </div>
 
                     <h1 className="text-white text-3xl font-bold tracking-tight">Tiktok</h1>
